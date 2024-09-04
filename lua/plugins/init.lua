@@ -4,6 +4,24 @@ return {
   --   enabled = false,
   -- },
   {
+    "nvim-tree/nvim-tree.lua",
+    config = function()
+      require("nvim-tree").setup {
+        git = {
+          enable = true,
+          ignore = false,
+          timeout = 500,
+        },
+        respect_buf_cwd = true,
+        update_focused_file = {
+          enable = true,
+          -- update_root = true,
+        },
+      }
+    end,
+  },
+
+  {
     "onsails/lspkind.nvim",
   },
 

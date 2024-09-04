@@ -26,6 +26,9 @@ return {
       local MIN_LABEL_WIDTH = 20
 
       cmp.setup {
+        completion = {
+          completeopt = "menu,menuone,noinsert",
+        },
         window = {
           completion = cmp.config.window.bordered {
             scrollbar = false,
@@ -38,28 +41,43 @@ return {
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "buffer" },
-          { name = "path" },
+          { name = "path", option = {
+            trailing_slash = true,
+          } },
         },
         mapping = cmp.mapping.preset.insert {
           ["<C-s>"] = cmp.mapping {
-
             i = cmp.mapping.confirm { select = true },
             c = cmp.mapping.confirm { select = true },
           },
+          ["<M-s>"] = cmp.mapping {
+            i = cmp.mapping.confirm { select = true },
+            c = cmp.mapping.confirm { select = true },
+          },
+
           ["<M-r>"] = cmp.mapping {
             i = cmp.mapping.close(),
             c = cmp.mapping.close(),
           },
 
-          ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-d>"] = cmp.mapping.scroll_docs(4),
-          ["<C-e>"] = cmp.mapping {
+          -- ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+          -- ["<C-d>"] = cmp.mapping.scroll_docs(4),
+          ["<C-d>"] = cmp.mapping {
             i = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
             c = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
           },
           ["<C-q>"] = cmp.mapping {
             i = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
             c = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
+          },
+          ["<M-d>"] = cmp.mapping {
+            i = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+            c = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+          },
+          ["<M-q>"] = cmp.mapping {
+
+            i = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+            c = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
           },
         },
 
@@ -92,8 +110,12 @@ return {
       }
 
       local cmdline_mappings = cmp.mapping.preset.cmdline {
-        ["<C-e>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
-        ["<C-q>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+        ["<M-d>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+        ["<M-q>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+
+        ["<M-s>"] = cmp.mapping.confirm { select = true, behavior = cmp.ConfirmBehavior.Insert },
+        ["<C-d>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
+        ["<C-q>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
         ["<C-s>"] = cmp.mapping.confirm { select = true, behavior = cmp.ConfirmBehavior.Insert },
         ["<M-r>"] = cmp.mapping.close(),
         -- ["<C-r>"] = cmp.mapping.abort(), -- Cancel completion
@@ -104,13 +126,21 @@ return {
         sources = {
           { name = "buffer" },
         },
+        completion = {
+          completeopt = "menu,menuone,noinsert",
+        },
       })
 
       -- `:` cmdline setup.
       cmp.setup.cmdline(":", {
         mapping = cmdline_mappings,
         sources = cmp.config.sources({
-          { name = "path" },
+          {
+            name = "path",
+            -- option = {
+            --   trailing_slash = true, -- set false for non directory slash
+            -- },
+          },
         }, {
           {
             name = "cmdline",

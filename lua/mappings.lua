@@ -57,3 +57,7 @@ map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map("n", "<leader>e", "<cmd>!chmod +x %<CR>", { silent = true })
 -- Ensure the nvim-tree API is loaded
 local nvim_tree_api = require "nvim-tree.api"
+map("t", "<C-[>", "<C-\\><C-n>", { silent = true })
+map("t", "<C-q>", "<C-\\><C-n>:q<CR>", { desc = "Quit current terminal window" })
+map("c", "<M-e>", "<Up>")
+map("c", "<M-f>", "<Down>")
