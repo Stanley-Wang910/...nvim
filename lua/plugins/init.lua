@@ -3,22 +3,24 @@ return {
   --   "lewis6991/gitsigns.nvim",
   --   enabled = false,
   -- },
+  require "plugins.oil",
   {
     "nvim-tree/nvim-tree.lua",
-    config = function()
-      require("nvim-tree").setup {
-        git = {
-          enable = true,
-          ignore = false,
-          timeout = 500,
-        },
-        respect_buf_cwd = true,
-        update_focused_file = {
-          enable = true,
-          -- update_root = true,
-        },
-      }
-    end,
+    enabled = false,
+    -- config = function()
+    --   require("nvim-tree").setup {
+    --     git = {
+    --       enable = true,
+    --       ignore = false,
+    --       timeout = 500,
+    --     },
+    --     respect_buf_cwd = true,
+    --     update_focused_file = {
+    --       enable = true,
+    --       -- update_root = true,
+    --     },
+    --   }
+    -- end,
   },
 
   {

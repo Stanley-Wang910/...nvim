@@ -70,11 +70,11 @@ return {
             i = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
             c = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
           },
-          ["<M-d>"] = cmp.mapping {
+          ["<M-j>"] = cmp.mapping {
             i = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
             c = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
           },
-          ["<M-q>"] = cmp.mapping {
+          ["<M-k>"] = cmp.mapping {
 
             i = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
             c = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
@@ -110,8 +110,8 @@ return {
       }
 
       local cmdline_mappings = cmp.mapping.preset.cmdline {
-        ["<M-d>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-        ["<M-q>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+        ["<M-j>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+        ["<M-k>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
 
         ["<M-s>"] = cmp.mapping.confirm { select = true, behavior = cmp.ConfirmBehavior.Insert },
         ["<C-d>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
@@ -126,9 +126,9 @@ return {
         sources = {
           { name = "buffer" },
         },
-        completion = {
-          completeopt = "menu,menuone,noinsert",
-        },
+        -- completion = {
+        --   completeopt = "menu,menuone,noinsert",
+        -- },
       })
 
       -- `:` cmdline setup.

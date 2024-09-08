@@ -10,14 +10,14 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
-      ensure_installed = {
-        -- Languages
-        "pyright",
-        "debugpy",
-        -- Formatters
-        "black",
-        "prettier",
-      },
+      -- ensure_installed = {
+      --   -- Languages
+      --   "pyright",
+      --   "debugpy",
+      --   -- Formatters
+      --   "black",
+      --   "prettier",
+      -- },
     },
   },
   {
