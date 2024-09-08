@@ -55,6 +55,9 @@ return {
             c = cmp.mapping.confirm { select = true },
           },
 
+          ["<Tab>"] = cmp.mapping {
+            c = cmp.mapping.confirm { select = true },
+          },
           ["<M-r>"] = cmp.mapping {
             i = cmp.mapping.close(),
             c = cmp.mapping.close(),
@@ -64,11 +67,17 @@ return {
           -- ["<C-d>"] = cmp.mapping.scroll_docs(4),
           ["<C-d>"] = cmp.mapping {
             i = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
-            c = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
+            c = cmp.mapping.select_next_item {
+              -- behavior = cmp.SelectBehavior.Insert,
+              behavior = cmp.SelectBehavior.Select,
+            },
           },
           ["<C-q>"] = cmp.mapping {
             i = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
-            c = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
+            c = cmp.mapping.select_prev_item {
+              -- behavior = cmp.SelectBehavior.Insert,
+              behavior = cmp.SelectBehavior.Select,
+            },
           },
           ["<M-j>"] = cmp.mapping {
             i = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
@@ -114,20 +123,24 @@ return {
         ["<M-k>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
 
         ["<M-s>"] = cmp.mapping.confirm { select = true, behavior = cmp.ConfirmBehavior.Insert },
-        ["<C-d>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
-        ["<C-q>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
+        ["<C-d>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+        ["<C-q>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
         ["<C-s>"] = cmp.mapping.confirm { select = true, behavior = cmp.ConfirmBehavior.Insert },
         ["<M-r>"] = cmp.mapping.close(),
         -- ["<C-r>"] = cmp.mapping.abort(), -- Cancel completion
+        ["<Tab>"] = cmp.mapping.confirm { select = true },
       }
       -- `/` cmdline setup
       cmp.setup.cmdline({ "/", "?" }, {
         mapping = cmdline_mappings,
         sources = {
+          { name = "path", option = {
+            trailing_slash = true,
+          } },
           { name = "buffer" },
         },
         -- completion = {
-        --   completeopt = "menu,menuone,noinsert",
+        --   completeopt = "menu,noselect",
         -- },
       })
 

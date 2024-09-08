@@ -11,6 +11,7 @@ M.base46 = {
     comment = { italic = true, fg = "#8d8c8f" },
     ["@comment"] = { italic = true, fg = "#8d8c8f" },
   },
+  transparency = true,
 }
 
 M.ui = {
@@ -20,6 +21,9 @@ M.ui = {
     separator_style = "default",
     overriden_modules = nil,
   },
+  -- tabufline = {
+  --   enabled = false,
+  -- },
 }
 
 -- M.plugins = 'custom.plugins'
