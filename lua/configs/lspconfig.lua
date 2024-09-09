@@ -24,7 +24,7 @@ lspconfig.pyright.setup {
 lspconfig.ocamllsp.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  -- filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
+  filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
 }
 -- configuring single server, example: typescript
 -- lspconfig.tsserver.setup {
