@@ -23,10 +23,10 @@ map("n", "zh", "15zh")
 map("n", "<F3>", ":set hlsearch!<CR>", { silent = true })
 
 -- Tmux navigation
-map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", { desc = "window left" })
-map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", { desc = "window right" })
-map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", { desc = "window down" })
-map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", { desc = "window up" })
+map("n", "<C-h>", "<cmd> KittyNavigateLeft<CR>", { desc = "window left" })
+map("n", "<C-l>", "<cmd> KittyNavigateRight<CR>", { desc = "window right" })
+map("n", "<C-j>", "<cmd> KittyNavigateDown<CR>", { desc = "window down" })
+map("n", "<C-k>", "<cmd> KittyNavigateUp<CR>", { desc = "window up" })
 
 -- Set the working directory to the path of the current buffer.
 map("n", "<leader>sd", function()

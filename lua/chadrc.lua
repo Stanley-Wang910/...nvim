@@ -8,8 +8,11 @@ M.base46 = {
   theme = "catppuccin",
 
   hl_override = {
-    comment = { italic = true, fg = "#8d8c8f" },
-    ["@comment"] = { italic = true, fg = "#8d8c8f" },
+    comment = { italic = true, fg = "#5b6078" },
+    Comment = { italic = true, fg = "#5b6078" },
+    ["@comment"] = { italic = true, fg = "#5b6078" },
+    LineNr = { fg = '#5b6078' },
+    CursorLineNr = { fg = '#ef9f76', bold = true },
   },
   transparency = true,
 }

@@ -35,6 +35,13 @@ require("lazy").setup({
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
+local function set_highlights()
+  -- Set the Visual mode highlight color
+  vim.api.nvim_set_hl(0, "Visual", { bg = "#4c4f69" }) -- Replace #3a3a3a with your desired color
+end
+
+-- Call the function to set custom highlights
+set_highlights()
 require "options"
 require "nvchad.autocmds"
 
@@ -44,48 +51,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank { higroup = "Visual", timeout = 300 }
   end,
 })
-
--- Function to remove carriage returns and trailing whitespace
--- local function remove_cr_and_trim()
---   local view = vim.fn.winsaveview()
---   vim.cmd [[
---     silent! %s/\r$//ge
---     silent! %s/\s\+$//ge
---   ]]
---   vim.fn.winrestview(view)
--- end
-
--- -- Set up autocommand to remove CR and trim whitespace on paste
--- vim.api.nvim_create_autocmd({"TextChanged", "TextChangedI"}, {
---   callback = function()
---     -- Check if the last operation was a paste
---     if vim.fn.getregtype('"') ~= '' then
---       remove_cr_and_trim()
---     end
---   end,
--- })
---
-
--- vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI" }, {
---   callback = function()
---     -- Check if the last operation was a paste
---     if vim.fn.getregtype '"' ~= "" then
---       remove_cr_and_trim()
---     end
---   end,
--- })
--- Set up autocommand to remove CR and trim whitespace on paste, but not during normal editing
--- vim.api.nvim_create_autocmd("InsertLeave", {
---   callback = function()
---     -- Check if the last operation was a paste
---     if vim.fn.getregtype('"') ~= '' and vim.fn.line("'[") == vim.fn.line("']") then
---       remove_cr_and_trim()
---     end
---   end,
--- })
---
--- -- Keymapping to manually trigger CR removal and whitespace trimming
--- vim.keymap.set("n", ",m", remove_cr_and_trim, { noremap = true, silent = true })
 
 vim.schedule(function()
   require "mappings"
