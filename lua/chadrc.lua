@@ -11,8 +11,8 @@ M.base46 = {
     comment = { italic = true, fg = "#5b6078" },
     Comment = { italic = true, fg = "#5b6078" },
     ["@comment"] = { italic = true, fg = "#5b6078" },
-    LineNr = { fg = '#5b6078' },
-    CursorLineNr = { fg = '#ef9f76', bold = true },
+    LineNr = { fg = "#5b6078" },
+    CursorLineNr = { fg = "#ef9f76", bold = true },
   },
   transparency = true,
 }

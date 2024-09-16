@@ -139,7 +139,7 @@ return {
           [StatusType.UpstreamTypeChanged] = "󱧶",
           [StatusType.UpstreamUnmodified] = " ",
           [StatusType.UpstreamUnmerged] = "",
-          [StatusType.UpstreamUntracked] = " ",
+          [StatusType.UpstreamUntracked] = "",
           [StatusType.UpstreamExternal] = "",
         },
       }

@@ -57,6 +57,7 @@ return {
 
           ["<Tab>"] = cmp.mapping {
             c = cmp.mapping.confirm { select = true },
+            i = cmp.mapping.confirm { select = true },
           },
           ["<M-r>"] = cmp.mapping {
             i = cmp.mapping.close(),

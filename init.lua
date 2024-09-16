@@ -38,6 +38,7 @@ dofile(vim.g.base46_cache .. "statusline")
 local function set_highlights()
   -- Set the Visual mode highlight color
   vim.api.nvim_set_hl(0, "Visual", { bg = "#4c4f69" }) -- Replace #3a3a3a with your desired color
+  vim.api.nvim_set_hl(0, "MatchParen", { bg = "#474655", fg = "#ef9f76", bold = true })
 end
 
 -- Call the function to set custom highlights
