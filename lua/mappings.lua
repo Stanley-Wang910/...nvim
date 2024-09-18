@@ -33,6 +33,7 @@ map("n", "<leader>sd", function()
   vim.cmd("cd " .. vim.fn.expand "%:p:h")
 end, { desc = "Set working directory to path of buffer." })
 map("n", ";", ":", { desc = "CMD enter command mode" })
+map("n", ":", ";", { desc = "repeat find" })
 map("i", "kj", "<ESC>")
 
 -- UndotreeToggle
@@ -50,7 +51,7 @@ map("i", "<M-d>", "<space><Esc>ce", { noremap = true })
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
-map("n", "<C-f>", "<cmd>silent !tmux neww<CR>")
+-- map("n", "<C-f>", "<cmd>silent !tmux neww<CR>")
 
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- Turn file into an executable
