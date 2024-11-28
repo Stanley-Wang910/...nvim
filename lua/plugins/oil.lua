@@ -15,15 +15,18 @@ return {
         skip_confirm_for_simple_edits = true,
 
         win_options = {
-          signcolumn = "yes:2",
+          signcolumn = "yes:1",
         },
         -- win_options = {
         --   signcolumn = "number",
         -- },
-        columns = { "icon" },
+        columns = {
+          "icon",
+          "status", -- Add this to show git status icons
+        },
         keymaps = {
           ["<C-h>"] = false,
-          ["M-h"] = "actions.select_split",
+          -- ["M-h"] = "actions.select_split",
 
           ["<C-l>"] = false,
           -- ["<M-q>"] = "actions.parent",
@@ -116,7 +119,7 @@ return {
           [StatusType.UpstreamExternal] = "OilVcsStatusUpstreamExternal",
         },
 
-        -- show_ignored = true, -- show files that match gitignore with !!
+        show_ignored = true, -- show files that match gitignore with !!
         status_symbol = {
           [StatusType.Added] = "",
           [StatusType.Copied] = "󰆏",
@@ -133,7 +136,7 @@ return {
           [StatusType.UpstreamAdded] = "󰈞",
           [StatusType.UpstreamCopied] = "󰈢",
           [StatusType.UpstreamDeleted] = "",
-          [StatusType.UpstreamIgnored] = " ",
+          [StatusType.UpstreamIgnored] = "!",
           [StatusType.UpstreamModified] = "󰏫",
           [StatusType.UpstreamRenamed] = "",
           [StatusType.UpstreamTypeChanged] = "󱧶",
