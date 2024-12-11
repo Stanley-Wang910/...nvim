@@ -29,11 +29,11 @@ return {
 
 	{
 		"stevearc/conform.nvim",
-		event = "BufWritePre", -- uncomment for format on save
+		event = "bufwritepre", -- uncomment for format on save
 		opts = require "configs.conform",
 	},
 
-	-- These are some examples, uncomment them if you want to see them work!
+	-- these are some examples, uncomment them if you want to see them work!
 	require "plugins.vim-tmux-nav",
 	require "plugins.tabout",
 	require "plugins.surround",
@@ -61,6 +61,13 @@ return {
 			},
 			indent = {
 				disable = { "python", "ocaml" },
+			},
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					node_incremental = "v",
+					node_decremental = "V",
+				},
 			},
 		},
 	},

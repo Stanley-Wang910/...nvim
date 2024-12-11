@@ -14,7 +14,7 @@ M.base46 = {
 		LineNr = { fg = "#5b6078" },
 		CursorLineNr = { fg = "#ef9f76", bold = true },
 	},
-	transparency = true, -- true
+	transparency = false, -- true
 }
 
 M.ui = {
